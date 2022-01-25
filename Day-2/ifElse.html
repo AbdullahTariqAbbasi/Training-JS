@@ -2,17 +2,23 @@
    <body>
       
       <script type="text/javascript">
-            var age = 20;
-         
-            if( age > 18 ){
-               document.write("<b>Qualifies for driving</b>");
-            }
-            else
-            {
-                document.write("<b>Qualifies for driving</b>");
-            }
+         function driverQualified()
+         {
+            var driverQualified = document.getElementById('driverQualified');
+            driverQualified.addEventListener('keypress', function(e){
+               if(e.keyCode == 13){
+                  if( this.value > 18 ){
+                     document.write("<b>Qualified for driving</b>");
+                  }
+                  else
+                  {
+                     document.write("<b>Not Qualified for driving</b>");
+                  }
+               }
+            });
+         }
       </script>
-      
-      <p>Set the variable to different value and then try...</p>
+      <p>Age:</p>
+      <input type="number" id="driverQualified" onkeyup="driverQualified()">
    </body>
 </html>

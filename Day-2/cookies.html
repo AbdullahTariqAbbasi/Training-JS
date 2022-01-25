@@ -1,0 +1,47 @@
+<html>
+   <head>
+      
+      <script type = "text/javascript">
+            function writeCookie()
+            {
+               if( document.myform.customer.value == "" ){
+                  alert("Enter some value!");
+                  return;
+               }
+               cookievalue= encodeURI(document.myform.customer.value) + ';';
+               document.cookie = "name=" + cookievalue;
+               getCookie();
+               var now = new Date();
+               now.setMonth( now.getMonth() - 1 );
+               document.cookie = "name='';expires=" + now.toUTCString() + ";"
+               getCookie();
+                
+            }
+            function getCookie()
+            {
+                var allcookies = document.cookie;
+               document.write ("All Cookies : " + allcookies + '<br/>');
+               
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(';');
+               
+               // Now take key value pair out of this array
+               for(var i=0; i<cookiearray.length; i++){
+                  name = cookiearray[i].split('=')[0];
+                  value = cookiearray[i].split('=')[1];
+                  document.write ("Key is : " + name + " and Value is : " + value + '<br/>');
+               }
+            }
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form name="myform" action="">
+         Enter name: <input type="text" name="customer"/>
+         <input type="button" value="Set Cookie" onclick="writeCookie()"/>
+      </form>
+   
+   </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+   <head>
+   
+      <script type="text/javascript">
+            function over() {
+                document.getElementById('coloredDiv').style.backgroundColor = 'green';
+            }
+            function out() {
+                document.getElementById('coloredDiv').style.backgroundColor = 'red';
+            }
+      </script>
+      
+   </head>
+   <body>
+      <p>Hover on red box</p>
+      
+      <div onmouseover="over()" onmouseout="out()" id="coloredDiv" style="background-color: red;">
+         <h2> ....Box.... </h2>
+      </div>
+         
+   </body>
+</html>

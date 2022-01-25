@@ -1,0 +1,22 @@
+<html>
+   <body>
+      
+      <script type="text/javascript">
+         function gradeChecker()
+         {
+            var marks = document.getElementById('marks');
+            marks.addEventListener('keypress', function(e){
+                if(e.keyCode == 13){
+                    var count = this.value;
+                    while (count >= 1) {
+                        document.write("Looping till 0, currenly on : " + count + "<br />");
+                        count--;
+                    }
+                }
+            });
+         }
+      </script>
+      <p>Enter Number:</p>
+      <input type="number" id="marks" onkeyup="gradeChecker()" min="0" max="100">
+   </body>
+</html>

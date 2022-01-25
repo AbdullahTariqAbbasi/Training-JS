@@ -1,0 +1,40 @@
+<html>
+   <head>
+   
+      <script type="text/javascript">
+            function getConfirmation(){
+               var retVal = confirm("Do you want to continue ?");
+               if( retVal == true ){
+                  window.location.reload();
+                  return true;
+               }
+               else{
+                  document.write ("User does not want to continue!");
+                  return false;
+               }
+            }
+
+            function getValue(){
+               var retVal = prompt("Enter your name : ", "your name here");
+               console.log(retVal);
+               if( retVal.length > 0 ){
+                  document.write("You have entered : " + retVal);
+                  return true;
+               }
+               else{
+                  return false;
+               }
+            }
+      </script>
+      
+   </head>
+   <body>
+      <p>Click the following button to see the result: </p>
+      
+      <form>
+         <input type="button" value="Confirmation" onclick="getConfirmation();" />
+         <input type="button" value="NameDialog" onclick="getValue();" />
+      </form>
+      
+   </body>
+</html>

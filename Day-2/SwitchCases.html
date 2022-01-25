@@ -1,0 +1,38 @@
+<html>
+   <body>
+      
+      <script type="text/javascript">
+         function gradeChecker()
+         {
+            var marks = document.getElementById('marks');
+            marks.addEventListener('keypress', function(e){
+                if(e.keyCode == 13){
+                   switch(true)
+                   {
+                        case (this.value >= 86 && this.value <= 100):
+                            document.write("<b>A</b>");
+                            break;
+                        case (this.value >= 74 && this.value <= 85):
+                            document.write("<b>B</b>");
+                            break;    
+                        case (this.value >= 64 && this.value <= 73):
+                            document.write("<b>C</b>");
+                            break;
+                        case (this.value >= 50 && this.value <= 63):
+                            document.write("<b>D</b>");
+                            break;
+                        case (this.value < 50 && this.value >= 0):
+                            document.write("<b>F</b>");
+                            break;
+                        default:
+                            document.write("<b>Invalid Entry</b>");
+                            break;
+                   }
+                }
+            });
+         }
+      </script>
+      <p>Enter Number:</p>
+      <input type="number" id="marks" onkeyup="gradeChecker()" min="0" max="100">
+   </body>
+</html>
