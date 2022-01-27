@@ -1,0 +1,41 @@
+<html>
+    <head>
+    <title>JS Practice</title>
+    </head>
+    <body>
+    
+        <script type="text/javascript">
+            //Closures
+                var countVisitor = function () {
+                    var privateCounter = 0;
+                    function changeBy(val) {
+                        privateCounter += val;
+                    }
+
+                    return {
+                        increment: function() {
+                            changeBy(1);
+                        },
+
+                        decrement: function() {
+                            changeBy(-1);
+                        },
+
+                        value: function() {
+                            return privateCounter;
+                        }
+                    }
+                };
+
+                var counter101 = countVisitor();
+                console.log(counter101.value());
+                counter101.increment();
+                counter101.increment();
+                console.log(counter101.value());
+                counter101.decrement();
+                console.log(counter101.value());
+                
+        </script>
+        
+    </body>
+</html>
