@@ -1,0 +1,61 @@
+<html>
+    <body>
+        <script type="text/javascript">
+            var obj = {
+                num: 100
+            }
+
+            window.num = 2020; // yikes!
+
+            var add = function (a, b, c) {
+                return this.num + a + b + c;
+            }
+
+            var result = add.call(obj, 1, 2, 3)
+            console.log(result)
+
+            const arr = [1, 2, 3]
+            var result = add.apply(obj, arr)
+            console.log(result)
+
+            var result = add.bind(obj)
+            console.log(result(1, 2, 3))
+
+            //Arrow functions
+            var maxLimiter = a => a > 20 ? 20 : a;
+            console.log(maxLimiter(23));
+            console.log(maxLimiter(10));
+
+            //Rest Parameters
+            var sum = (...theArgs) => {
+                return theArgs.reduce((previous, current) => {
+                    return previous + current;
+                });
+            }
+            console.log('Sum: ');
+            console.log(sum(1, 2, 3));
+            console.log(sum(1, 2, 3, 4));
+
+            var multiply = (arg1, ...theArgs) => {
+                return theArgs.map(e => {
+                    return arg1 * e;
+                });
+            }
+            console.log(multiply(2, 1, 2, 3));
+
+            //This keyword
+            var video = {
+                title: 'a',
+                tags: ['s','d','f'],
+                showTags() {
+                    this.tags.forEach(function (tag) {
+                        console.log(this.title+': '+tag);
+                    }, this);
+                }
+            };
+            video.showTags();
+
+        </script>
+        <h1>Check Console!!!</h1>
+    </body>
+</html>
