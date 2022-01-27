@@ -24,9 +24,36 @@
         <script type="text/javascript">
             var myBook = new book("YDKJS", "Kyle Simpson");
             myBook.addPrice(99.99);
+            var myAnotherBook = new book('A','B');
+            myAnotherBook.addPrice(99.99);
+            myAnotherBook.theme = "Black"
+            console.log('Another Book');
+            console.log(myAnotherBook);
+            book.prototype.theme = null;                      //Adding property to the object
+            myBook.theme = 'Yellow & White';
+
+            //Checking has own property
+            console.log("myBook.hasOwnProperty('engine'): "+myBook.hasOwnProperty('engine'));
+            console.log("myBook.hasOwnProperty('title'): "+myBook.hasOwnProperty('title'));
+            console.log("myBook.hasOwnProperty('theme'): "+myBook.hasOwnProperty('theme'));
+
+            //Getting prototype of
+            object = Object.getPrototypeOf(myBook);
+            console.log(object);
+
+            console.log(Date.now().toLocaleString());
+
+            //To Precision
+            console.log(17.8901.toPrecision(2));
+
+            const num = new Number(15.11234);
+            console.log("num.valueOf() is " + num.valueOf());
+
             document.write("Book title is : " + myBook.title + "<br>");
             document.write("Book author is : " + myBook.author + "<br>");
             document.write("Book price is : $" + myBook.price + "<br>");
+            document.write("Book theme is : " + myBook.theme + "<br>");
+            
         </script>
         
     </body>

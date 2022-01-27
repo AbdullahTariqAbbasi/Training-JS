@@ -1,0 +1,60 @@
+<html>
+    <head>
+    <title>User-defined objects</title>
+    
+        <script type="text/javascript">
+            function addPrice(amount){
+                this.price = amount; 
+            }
+            
+            function book(title, author){
+                this.title = title;
+                this.author  = author;
+                this.addPrice = addPrice;
+            }
+        </script>
+        
+    </head>
+    <body>
+    
+        <script type="text/javascript">
+            //String functions
+                //charAt
+                console.log('here'.charAt(2));
+                //charCodeAt
+                console.log('here'.charCodeAt(2));
+                //concat
+                console.log('StringA'.concat('StringB'));
+                //indexOf
+                console.log('Sample string 123'.indexOf('123'));
+                //lastIndexOf
+                console.log('Sample string - sample Sample'.lastIndexOf('sample'));
+                //localeCompare
+                console.log('Sample string - sample Sample'.localeCompare('XYZ'));
+                console.log('Sample string - sample 1.1 Sample'.localeCompare('a'));
+                //match
+                console.log('Sample string - sample Sample'.match(/ample/g));
+                //replace
+                console.log('string sample'.replace(/sample/g, "not").replace(/(\w+)\s(\w+)/, "$2, $1"));
+                //search
+                console.log('String sample'.search(/sample/g));
+                //slice
+                console.log('Sample String.'.slice(4, -1));
+                //split
+                console.log('Sample String .'.split(" ",2));
+                //substring
+                console.log('Sample String.'.substr(4,9));
+                //anchor
+                var str = new String("Hello World");
+                // document.write(str.anchor( "myanchor" ));
+                //big
+                var str = new String("Hello Work");
+                document.write(str.fixed().fontcolor('red').fontsize(4));
+                document.write("\n");
+                document.write(str.fixed().fontcolor('brown').small());
+
+
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+    <head>
+    <title>User-defined objects</title>
+    
+        <script type="text/javascript">
+            function addPrice(amount){
+                this.price = amount; 
+            }
+            
+            function book(title, author){
+                this.title = title;
+                this.author  = author;
+                this.addPrice = addPrice;
+            }
+        </script>
+        
+    </head>
+    <body>
+    
+        <script type="text/javascript">
+            //Arrays functions
+                //concat
+                var alpha = ['a','b','c','f'];
+                var numeric = [1,2,3,4];
+                console.log(alpha.concat(numeric));
+
+                //every
+                var isPassed = (val) => val != 'f';
+                console.log(alpha.every(isPassed));
+
+                //filter
+                console.log(alpha.filter(isPassed));
+
+                //forEach
+                alpha.forEach(e => console.log(e));
+
+                //indexOf
+                console.log(alpha.indexOf('f'));
+
+                //join
+                console.log(alpha.join(""));
+
+                //map
+                alpha.map((e,i) => console.log(e+(i+1)))
+
+                //pop
+                alpha.pop();
+                console.log(alpha);
+
+                //push
+                alpha.push('f');
+                console.log(alpha);
+
+                //reduce
+                console.log(alpha.reduce((p,c) => p+c));
+
+                // reduceRight
+                console.log(alpha.reduceRight(function(accumulator, currentValue, index, array) {
+                    return accumulator + currentValue;
+                }));
+                
+                //reverse
+                console.log(alpha.reverse());
+
+                //shift
+                console.log(alpha.shift());
+                console.log(alpha.reverse());
+
+                //slice
+                console.log('Slice');
+                console.log(alpha.slice(2));
+                console.log(alpha.slice(2, 4));
+                console.log(alpha.slice(1, 5));
+                console.log(alpha.slice(-2));
+                console.log(alpha.slice(1, -1));
+                console.log(alpha.slice());
+
+                //some
+                console.log('Some');
+                console.log(numeric.some(e => (e % 3) == 0));
+
+                //splice
+                alpha.splice(1, 0, 'f');
+                console.log(alpha);
+                alpha.splice(0, 2);
+                console.log(alpha);
+
+                //unshift
+                alpha.unshift('a');
+                console.log(alpha);
+
+                //toString
+                console.log(alpha.toString());
+
+        </script>
+        
+    </body>
+</html>
