@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <title>JS Practice</title>
+    </head>
+    <body>
+    
+        <script type="text/javascript">
+            //Math functions
+                console.log(Math.abs(2-5));
+                console.log(2-5);
+
+                //Cube Root
+                console.log(Math.cbrt(64));
+
+                //Ceil
+                console.log(Math.ceil(1.1));
+
+                //clz32 returns leading zeros after converting given value to 32 bit binary
+                console.log(Math.clz32(8910));
+
+                //Floor
+                console.log(Math.floor(1.9));
+
+                //Log
+                console.log(Math.log(1));
+
+
+                function getBaseLog(x, y)
+                {
+                    return Math.round(Math.log(y) / Math.log(x));
+                }
+
+                console.log(getBaseLog(100,10000));
+
+                //min & max
+                console.log(Math.max()); //returns negative ∞
+                console.log(Math.max(1,9));
+
+                console.log(Math.min()); //returns positive ∞
+                console.log(Math.min(29,21))
+
+                var arr = [-1,2,-3];
+                var max = arr.reduce(function(a, b) {
+                    return Math.min(a, b);
+                });
+                console.log(max);
+
+                //pow
+                console.log(Math.pow(-7,0.5));
+
+                //random & round
+                console.log(Math.random());
+                function randomGenerator(val) {
+                    return Math.ceil(Math.random() * val);
+                };
+                console.log(randomGenerator(5));
+                console.log(Math.round(1.9));
+                console.log(Math.round(2.4));
+
+        </script>
+        
+    </body>
+</html>

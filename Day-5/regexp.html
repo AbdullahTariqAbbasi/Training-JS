@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <title>JS Practice</title>
+    </head>
+    <body>
+    
+        <script type="text/javascript">
+            //Regular Expressions
+                var str = "Visit 1990 and @_";
+                console.log(str.match(/[A-Z]|[a-z]|[0-9]/g));
+
+                console.log(str.match(/V..it/g));
+
+                console.log(str.match(/v+/g));
+                console.log(str.match(/V+/g));
+
+                console.log(str.match(/\w/g)); //for words characters 0=9,a-z,A-Z including underscore(_)
+
+                console.log(str.match(/\w/g)); //for non-words/special characters characters 0=9,a-z,A-Z
+
+                console.log(str.match(/[A-Z]+/g));
+
+                console.log(str.match(/[a-z]+/g));
+
+                console.log(str.match(/i?si?/g)); //check if letter exists else remove it from expresion
+
+                console.log(str.match(/[a-z]+?/g));
+                console.log('some <foo> <bar> new </bar> </foo> thing'.match(/<.*?>/g));
+                
+                console.log('This is Spartaaaaaaa'.match(/\a{7}\b/g));
+
+                console.log('This is Spartaaaaaaa'.match(/\w{4,}/g));
+
+                console.log('This is Spartaaaaaaa'.match(/aaaaaaa$/g)); //matches ending of string
+
+                console.log('This is Spartaaaaaaa'.match(/^T/g)); //matches starting of string
+
+                // console.log('This is Spartaaaaaaa'.match());
+
+        </script>
+        
+    </body>
+</html>
